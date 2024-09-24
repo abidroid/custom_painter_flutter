@@ -1,3 +1,4 @@
+import 'package:custom_painter_flutter/screens/line_draw_screen.dart';
 import 'package:flutter/material.dart';
 
 class LandingScreen extends StatelessWidget {
@@ -14,7 +15,12 @@ class LandingScreen extends StatelessWidget {
           Card(
             child: ListTile(
               title: const Text('Line Draw'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return const LineDrawScreen();
+                }));
+              },
             ),
           ),
           Card(
