@@ -1,3 +1,5 @@
+import 'package:custom_painter_flutter/screens/circle_draw_screen.dart';
+import 'package:custom_painter_flutter/screens/interactive_draw_screen.dart';
 import 'package:custom_painter_flutter/screens/line_draw_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,13 +28,23 @@ class LandingScreen extends StatelessWidget {
           Card(
             child: ListTile(
               title: const Text('Circle Draw'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return const CircleDrawScreen();
+                }));
+              },
             ),
           ),
           Card(
             child: ListTile(
               title: const Text('Interactive Exapmle Draw'),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return const InteractiveDrawScreen();
+                }));
+              },
             ),
           ),
         ],
