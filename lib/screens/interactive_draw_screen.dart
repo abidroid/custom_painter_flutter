@@ -16,8 +16,18 @@ class _InteractiveDrawScreenState extends State<InteractiveDrawScreen> {
       appBar: AppBar(
         title: const Text('Interactive Example'),
       ),
-      body: CustomPaint(
-        painter: RectanglePainter(color: currentColor),
+      body: GestureDetector(
+        onTap: () {
+          print('yes');
+          setState(() {
+            currentColor =
+                currentColor == Colors.green ? Colors.orange : Colors.green;
+          });
+        },
+        child: CustomPaint(
+          size: const Size(300, 300),
+          painter: RectanglePainter(color: currentColor),
+        ),
       ),
     );
   }
